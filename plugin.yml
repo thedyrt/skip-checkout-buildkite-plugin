@@ -1,0 +1,5 @@
+name: skip-checkout
+description: Skips the default Buildkite and optionally changes to a specified directory
+author: https://github.com/reidab
+requirements: []
+configuration: {}

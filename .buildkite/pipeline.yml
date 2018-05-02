@@ -1,0 +1,13 @@
+steps:
+  - label: ":hammer:"
+    plugins:
+      docker-compose#v1.3.1:
+        run: tests
+  - label: ":sparkles: lint"
+    plugins:
+      plugin-linter#v1.0.0:
+        name: skip-checkout
+  - label: ":shell: Shellcheck"
+    plugins:
+      shellcheck#v1.0.1:
+        files: hooks/**
