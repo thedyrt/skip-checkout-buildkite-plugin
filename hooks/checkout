@@ -3,9 +3,3 @@
 set -euo pipefail
 
 echo "--- Skipping checkout"
-
-if [[ -n ${BUILDKITE_PLUGIN_SKIP_CHECKOUT_CD+x} ]]
-then
-  echo "--- Setting checkout directory to $BUILDKITE_PLUGIN_SKIP_CHECKOUT_CD"
-  export BUILDKITE_BUILD_CHECKOUT_PATH=$BUILDKITE_PLUGIN_SKIP_CHECKOUT_CD
-fi

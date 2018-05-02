@@ -10,6 +10,7 @@ function cleanup {
 trap cleanup EXIT
 
 checkout_hook="$PWD/hooks/checkout"
+post_checkout_hook="$PWD/hooks/post-checkout"
 
 @test "Skips checkout" {
   export BUILDKITE_BUILD_CHECKOUT_PATH=$tmp_dir
@@ -27,7 +28,7 @@ checkout_hook="$PWD/hooks/checkout"
   export BUILDKITE_PLUGIN_SKIP_CHECKOUT_CD="/var"
   cd "$BUILDKITE_BUILD_CHECKOUT_PATH"
 
-  run "$checkout_hook"
+  run "$post_checkout_hook"
 
   assert_success
   assert_output --partial "Setting checkout directory"
