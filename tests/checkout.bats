@@ -15,7 +15,7 @@ checkout_hook="$PWD/hooks/checkout"
   export BUILDKITE_BUILD_CHECKOUT_PATH=$tmp_dir
   cd "$BUILDKITE_BUILD_CHECKOUT_PATH"
 
-  source "$checkout_hook"
+  run "$checkout_hook"
 
   assert_success
   assert [ $BUILDKITE_BUILD_CHECKOUT_PATH = $tmp_dir ]
@@ -27,9 +27,9 @@ checkout_hook="$PWD/hooks/checkout"
   export BUILDKITE_PLUGIN_SKIP_CHECKOUT_CD="/var"
   cd "$BUILDKITE_BUILD_CHECKOUT_PATH"
 
-  source "$checkout_hook"
+  run "$checkout_hook"
 
   assert_success
-  assert [ $BUILDKITE_BUILD_CHECKOUT_PATH = $BUILDKITE_PLUGIN_SKIP_CHECKOUT_CD ]
   assert_output --partial "Setting checkout directory"
+  assert_output --partial "$BUILDKITE_PLUGIN_SKIP_CHECKOUT_CD"
 }
