@@ -9,13 +9,13 @@ Optionally sets the checkout directory to a specified path.
 ```yml
 steps:
   - plugins:
-      skip-checkout#v0.1.1: ~
+      thedyrt/skip-checkout#v0.1.1: ~
 ```
 
 ```yml
 steps:
   - plugins:
-      skip-checkout#v0.1.1:
+      thedyrt/skip-checkout#v0.1.1:
         cd: /mnt/data
 ```
 
