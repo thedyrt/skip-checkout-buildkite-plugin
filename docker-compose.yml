@@ -4,3 +4,9 @@ services:
     image: buildkite/plugin-tester
     volumes:
       - ".:/plugin:ro"
+  lint:
+    image: buildkite/plugin-linter
+    command: ['--name', 'thedyrt/skip-checkout']
+    volumes:
+      - ".:/plugin:ro"
+
