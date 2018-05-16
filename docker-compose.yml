@@ -6,7 +6,7 @@ services:
       - ".:/plugin:ro"
   lint:
     image: buildkite/plugin-linter
-    command: ['--name', 'thedyrt/skip-checkout']
+    command: ['--id', 'thedyrt/skip-checkout']
     volumes:
       - ".:/plugin:ro"
 
