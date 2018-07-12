@@ -5,8 +5,8 @@ steps:
         run: tests
   - label: ":sparkles: lint"
     plugins:
-      plugin-linter#v1.0.0:
-        name: thedyrt/skip-checkout
+      plugin-linter#v2.0.0:
+        id: thedyrt/skip-checkout
   - label: ":shell: Shellcheck"
     plugins:
       shellcheck#v1.0.1:
