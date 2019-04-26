@@ -23,6 +23,17 @@ post_checkout_hook="$PWD/hooks/post-checkout"
   assert_output --partial "Skipping checkout"
 }
 
+@test "Removes old artifacts {
+  export BUILDKITE_BUILD_CHECKOUT_PATH=$tmp_dir
+  cd "$BUILDKITE_BUILD_CHECKOUT_PATH"
+  touch some_old_artifact
+
+  run "$checkout_hook"
+
+  assert_success
+  refute [ -f some_old_artifact ]
+}
+
 @test "Updates checkout directory when 'cd' is given" {
   export BUILDKITE_BUILD_CHECKOUT_PATH=$tmp_dir
   export BUILDKITE_PLUGIN_SKIP_CHECKOUT_CD="/var"
