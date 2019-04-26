@@ -3,4 +3,4 @@
 set -euo pipefail
 
 echo "--- Removing any files from previous builds"
-rm -rf *
+rm -rf ./*
