@@ -2,5 +2,6 @@
 
 set -euo pipefail
 
-echo "--- Removing any files from previous builds"
+echo "--- Skipping checkout"
+echo "Removing any old artifacts"
 rm -rf ./*
